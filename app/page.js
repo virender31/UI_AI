@@ -1,8 +1,8 @@
 "use client"
 import Layout from './layout';
 import { useState } from 'react';
-import ProtectedRoute from '@/contexts/ProtectedRoute';
-import DashboardCard from '@/components/Dashboard';
+import ProtectedRoute from '../contexts/ProtectedRoute';
+import DashboardCard from '../components/Dashboard';
 import { Card,Container, CardContent, Typography, Divider, Button, Dialog, DialogTitle, DialogContent } from '@mui/material';
 
 const initialSuggestions = [

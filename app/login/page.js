@@ -1,7 +1,7 @@
 // app/login/page.js
 "use client"
 import { useState } from 'react';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext';
 import { Container, Box, Typography, TextField, Button } from '@mui/material';
 
 const LoginPage = () => {
