@@ -1,9 +1,7 @@
 "use client"
-import Layout from './layout';
 import { useState } from 'react';
-import ProtectedRoute from '@/contexts/ProtectedRoute';
-import DashboardCard from '@/components/Dashboard';
-import { Card,Container, CardContent, Typography, Divider, Button, Dialog, DialogTitle, DialogContent } from '@mui/material';
+import { Card, CardContent, Typography, Divider, Button, Dialog, DialogTitle, DialogContent } from '@mui/material';
+import Layout from '../layout';
 
 const initialSuggestions = [
   { heading: 'Suggestion 1', content: 'This is the content for suggestion 1.' },
@@ -11,7 +9,7 @@ const initialSuggestions = [
   { heading: 'Suggestion 3', content: 'This is the content for suggestion 3.' },
 ];
 
-export default function HomePage() {
+export default function SuggestionsPage() {
   const [suggestions, setSuggestions] = useState(initialSuggestions);
   const [open, setOpen] = useState(false);
   const [currentSuggestion, setCurrentSuggestion] = useState(null);
@@ -25,12 +23,10 @@ export default function HomePage() {
     setOpen(false);
     setCurrentSuggestion(null);
   };
+
   return (
-    <ProtectedRoute>
     <Layout>
-      <DashboardCard />
-      <Container>
-      <Card style={{ marginTop: '2rem',marginBottom: '2rem', padding: '1rem' }}>
+      <Card style={{ margin: '3rem', padding: '1rem' }}>
         <CardContent>
           <Typography variant="h5">AI Suggestions</Typography>
           <Divider style={{ margin: '1rem 0' }} />
@@ -54,8 +50,6 @@ export default function HomePage() {
           <Typography variant="body1">{currentSuggestion?.content}</Typography>
         </DialogContent>
       </Dialog>
-      </Container>
     </Layout>
-    </ProtectedRoute>
   );
 }
